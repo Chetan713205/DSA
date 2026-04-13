@@ -11,5 +11,30 @@ def find(s: str) -> int:
     return max_length
 
 
-s="abcabcbb"
+s="abcacbbb"
 print(find(s))
+
+'''
+
+Initial: a b c b a
+         ^   ^
+         l   r (r=2, window="abc")
+
+When r=3 (character 'b'):
+Window: a b c b
+        ^     ^
+        l     r
+        
+Remove from left until 'b' is gone:
+Step 1: a b c b  -> remove 'a'
+          ^   ^
+          l   r
+Step 2: a b c b  -> remove 'b'
+            ^ ^
+            l r
+            
+Now add new 'b': c b
+                 ^ ^
+                 l r
+
+'''
